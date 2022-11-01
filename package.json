@@ -1,0 +1,48 @@
+{
+  "name": "proxy-supervisor",
+  "version": "1.1.0-beta.0",
+  "description": "Refresh, monitor and balance your proxies",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=text-summary mocha 'test/**/*.test.js'",
+    "lint": "eslint ./",
+    "report": "nyc report",
+    "prepublishOnly": "eslint ./",
+    "postversion": "git push && git push --tags"
+  },
+  "author": "WarDevOfficial <wardev1999@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WarDevOfficial"
+  },
+  "keywords": [
+    "proxy",
+    "proxy list",
+    "proxy pool",
+    "proxy balancer"
+  ],
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/WarDevOfficial/proxy-layer/issues"
+  },
+  "homepage": "https://github.com/WarDevOfficial/proxy-layer#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "supports-color": "^7.1.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "chai-as-promised": "6.0.0",
+    "chai-spies": "^0.7.1",
+    "eslint": "4.18.2",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "prettier": "^1.19.1",
+    "supertest": "3.0.0"
+  }
+}
