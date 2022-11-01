@@ -1,6 +1,6 @@
-# proxy-supervisor
+# Proxy Layer
 
-Refresh, monitor and balance your proxies
+Monitors your proxies and balances them.
 
 ## Installation
 
@@ -32,7 +32,7 @@ const awesomeBalancer = balancer().add([
 ]);
 ```
 
-Great! Now let's get it to work. Create a middleware and put it in your route. To simplify example, we will use plain http server.
+Create a middleware and put it in your route. To simplify example, we will use plain http server.
 
 ```javascript
 http
@@ -41,7 +41,7 @@ http
   .listen(3000);
 ```
 
-Awesome! Next step is to set your balancing server as a proxy server wherever you want to use proxies. This server will proxy requests using specified list of proxies. The final trace will look like that _(you) -> (balancer) -> (proxy) -> (endpoint)_.
+Set your balancing server as a proxy server wherever you want to use proxies. This server will proxy requests using specified list of proxies. The final trace will look like that _(you) -> (balancer) -> (proxy) -> (endpoint)_.
 
 Finding proxies and adding them by hand is painful. Even more, you will probably want to remove dead ones. To simplify that process you can use _sources_. Let's add a few sources.
 
@@ -52,7 +52,7 @@ const source = require("ps-free-proxy-list");
 const awesomeBalancer = balancer().subscribe(source);
 ```
 
-Done! Sources will automatically replenish your balancer with new proxies. You should be able to find more sources on [github](https://github.com/). So, what about unreachable proxies? Let's add a monitor to filter them out!
+Sources will automatically replenish your balancer with new proxies. You should be able to find more sources on [github](https://github.com/). So, what about unreachable proxies? Let's add a monitor to filter them out!
 
 ```javascript
 const { monitor } = require("proxy-supervisor");
@@ -248,6 +248,3 @@ $ npm install
 $ npm test
 ```
 
-## License
-
-[MIT](LICENSE)
